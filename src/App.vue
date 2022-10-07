@@ -1,22 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div class="app-container">
+  <layout >
+    <template #left>
+      <div class="aside">
+        <SiteAside/>
+      </div>
+    </template>
+    <template #default>
+      中间主区域
+    </template>
+  </layout>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Layout from "@/components/Layout";
+import SiteAside from "@/components/SiteAside";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Layout,
+    SiteAside
   }
 }
 </script>
-
-<style lang="less">
+<style lang="less" scoped>
+@import "~@/styles/minxin.less";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +34,20 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.app-container {
+  .self-fill(fixed);
+  background: red;
+  .aside {
+    background: green;
+    width: 250px;
+    height: 100%;
+  }
+}
+
+.iconfont {
+  font-size: 26px;
+  color: red;
 }
 </style>
