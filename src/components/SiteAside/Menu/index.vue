@@ -1,11 +1,17 @@
 <template>
   <nav class="menu-container">
-    <a :href="item.link" :class="{selected: isSelected(item)}" v-for="item in items" :key="item.link">
+    <router-link
+        :exact="item.exact"
+        :to="{name : item.name}"
+        active-class="selected"
+        exact-active-class=""
+        v-for="item in items"
+        :key="item.name">
       <div class="icon">
         <icon :type="item.icon"></icon>
       </div>
       <span>{{ item.title }}</span>
-    </a>
+    </router-link>
   </nav>
 </template>
 
@@ -18,43 +24,37 @@ export default {
     return {
       items: [
         {
-          link: "/",
+          name: "Home",
           title: "首页",
           icon: "home",
+          exact: true
         },
         {
-          link: "/blog",
+          name: "Blog",
           title: "文章",
           icon: "blog",
-          startWith: true, // 只要当前路径以link开头，当前菜单就是选中的
+          exact: false, // 只要当前路径以link开头，当前菜单就是选中的
         },
         {
-          link: "/about",
+          name: "About",
           title: "关于我",
           icon: "about",
+          exact: true
         },
         {
-          link: "/project",
+          name: "Project",
           title: "项目&效果",
           icon: "code",
+          exact: true
         },
         {
-          link: "/message",
+          name: "Message",
           title: "留言板",
           icon: "chat",
+          exact: true
         },
       ],
     };
-  },
-  methods: {
-    isSelected(item) {
-      const curPathname = location.pathname.toLowerCase();
-      if (item.startWith) {
-        return curPathname.startsWith(item.link);
-      } else {
-        return curPathname === item.link;
-      }
-    }
   }
 }
 </script>

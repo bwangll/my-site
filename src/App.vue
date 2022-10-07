@@ -7,7 +7,7 @@
       </div>
     </template>
     <template #default>
-      中间主区域
+      <router-view></router-view>
     </template>
   </layout>
 </div>
@@ -38,7 +38,6 @@ export default {
 
 .app-container {
   .self-fill(fixed);
-  background: red;
   .aside {
     background: green;
     width: 250px;
