@@ -26,7 +26,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import "~@/styles/minxin.less";
+@import "~@/styles/mixin.less";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -43,14 +43,13 @@ export default {
         this.everyThingDone = true;
         this.$emit('load');
       }, this.duration);
-      console.log('原图加载完成');
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-@import "~@/styles/minxin.less";
+@import "~@/styles/mixin.less";
 .image-loader-container{
   width: 100%;
   height: 100%;

@@ -21,7 +21,7 @@ export default {
 
 <style lang="less" scoped>
 @import "~@/styles/var.less";
-@import "~@/styles/minxin.less";
+@import "~@/styles/mixin.less";
 
 .empty-container {
   text-align: center;
